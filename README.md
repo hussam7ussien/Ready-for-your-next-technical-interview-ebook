@@ -2,13 +2,13 @@
 
 ### From Java and Spring Boot to Cloud, System Design, and AI-Assisted Development
 
-**By Hussam Elnaqeb · First Edition**
+**By Hussam Elnaqeb · First Edition · 142 pages**
 
 A practical preparation guide for **candidates and interviewers**, written in simple English, with examples, diagrams, and questions that connect technical concepts to real engineering decisions.
 
 [**Read the ebook PDF**](./Ready_for_Your_Next_Technical_Interview.pdf) · [Read the Markdown version](./guide.md) · [Browse the interview questions](./questions.json)
 
-<img src="./cover.png" alt="Ready for Your Next Technical Interview book cover by Hussam Elnaqeb" width="340">
+<img src="./cover.png" alt="Ready for Your Next Technical Interview — illustrated interview cover by Hussam Elnaqeb" width="340">
 
 **Foreword by Tamer Mohamed, Senior Staff Engineer @ MaxAB.**
 
@@ -71,12 +71,14 @@ I organized those notes into this guide and decided to share it with others. My 
 | File or folder | Purpose |
 | --- | --- |
 | [Ebook PDF](./Ready_for_Your_Next_Technical_Interview.pdf) | Formatted edition for reading and review |
+| [foreword.md](./foreword.md) | Foreword by Tamer Mohamed |
+| [cover.png](./cover.png) | Current ebook cover |
 | [guide.md](./guide.md) | Complete Markdown manuscript |
 | [front.md](./front.md) and [body.md](./body.md) | Introduction, author information, and chapter source |
 | [cheat_sheets.md](./cheat_sheets.md) | Chapter summaries in Markdown |
 | [questions.json](./questions.json) | Numbered interview question bank |
 | [figures/](./figures/) | Diagrams and editable visual assets |
-| [examples/](./examples/) | AI development and testing examples |
+| [examples/](./examples/) | AI development, Playwright, MCP, skills, and a Java CI workflow example |
 | Java source files | Companion teaching examples |
 | [references.json](./references.json) | Documentation and further reading |
 | [Design document template](./design_document_template.md) | Structure for explaining a technical proposal |
