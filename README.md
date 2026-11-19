@@ -33,7 +33,7 @@ I organized those notes into this guide and decided to share it with others. My 
 | --- | --- |
 | **Java foundations** | Strings, generics, exceptions, number types, collections, iterators, and streams |
 | **Algorithms and coding** | Searching, sorting, complexity, and 20 coding practice problems |
-| **SOLID and design patterns** | Responsibilities, dependency direction, composition, and practical pattern examples |
+| **SOLID design patterns and DDD** | SOLID principles, design patterns, bounded contexts, entities, value objects, aggregates, and domain services |
 | **Spring Boot** | Dependency injection, bean scopes, profiles, configuration, APIs, and validation |
 | **Persistence** | JPA, fetching, N+1, DTO projections, transactions, proxies, and rollback |
 | **Concurrency and caching** | Shared state, atomic operations, parallel streams, cache keys, and invalidation |
