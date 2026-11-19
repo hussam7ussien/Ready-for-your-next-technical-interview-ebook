@@ -1,0 +1,657 @@
+[
+  [
+    "S01",
+    "Spring Boot application annotation",
+    "https://docs.spring.io/spring-boot/reference/using/using-the-springbootapplication-annotation.html"
+  ],
+  [
+    "S04",
+    "Spring bean scopes",
+    "https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html"
+  ],
+  [
+    "S06",
+    "Spring autowiring qualifiers",
+    "https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired-qualifiers.html"
+  ],
+  [
+    "S07",
+    "Spring Boot externalized configuration",
+    "https://docs.spring.io/spring-boot/reference/features/external-config.html"
+  ],
+  [
+    "S09",
+    "Spring MVC validation",
+    "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-validation.html"
+  ],
+  [
+    "S10",
+    "Spring MVC exception handlers",
+    "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-exceptionhandler.html"
+  ],
+  [
+    "S11",
+    "Spring MVC problem responses",
+    "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-ann-rest-exceptions.html"
+  ],
+  [
+    "S13",
+    "Spring Data JPA entity persistence",
+    "https://docs.spring.io/spring-data/jpa/reference/jpa/entity-persistence.html"
+  ],
+  [
+    "S14",
+    "Spring Data JPA transactionality",
+    "https://docs.spring.io/spring-data/jpa/reference/jpa/transactions.html"
+  ],
+  [
+    "S16",
+    "Spring Data JPA projections",
+    "https://docs.spring.io/spring-data/jpa/reference/repositories/projections.html"
+  ],
+  [
+    "S17",
+    "Spring declarative transaction annotations",
+    "https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html"
+  ],
+  [
+    "S18",
+    "Spring transaction propagation",
+    "https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/tx-propagation.html"
+  ],
+  [
+    "S19",
+    "Spring Transactional annotation API",
+    "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/annotation/Transactional.html"
+  ],
+  [
+    "S20",
+    "PostgreSQL transaction isolation",
+    "https://www.postgresql.org/docs/current/transaction-iso.html"
+  ],
+  [
+    "S21",
+    "Java AtomicInteger API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html"
+  ],
+  [
+    "S22",
+    "Java ConcurrentHashMap API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html"
+  ],
+  [
+    "S23",
+    "Java ArrayList API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html"
+  ],
+  [
+    "S24",
+    "Java Stream API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html"
+  ],
+  [
+    "S25",
+    "PostgreSQL explicit locking",
+    "https://www.postgresql.org/docs/current/explicit-locking.html"
+  ],
+  [
+    "S26",
+    "Spring cache annotations",
+    "https://docs.spring.io/spring-framework/reference/integration/cache/annotations.html"
+  ],
+  [
+    "S27",
+    "Spring Boot cache providers",
+    "https://docs.spring.io/spring-boot/reference/io/caching.html"
+  ],
+  [
+    "S28",
+    "Spring transaction aware cache decorator",
+    "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/cache/transaction/TransactionAwareCacheDecorator.html"
+  ],
+  [
+    "S29",
+    "Spring Security request authorization",
+    "https://docs.spring.io/spring-security/reference/servlet/authorization/authorize-http-requests.html"
+  ],
+  [
+    "S31",
+    "Spring Security JWT resource servers",
+    "https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html"
+  ],
+  [
+    "S32",
+    "Spring Security CSRF protection",
+    "https://docs.spring.io/spring-security/reference/servlet/exploits/csrf.html"
+  ],
+  [
+    "S34",
+    "Spring asynchronous execution and scheduling",
+    "https://docs.spring.io/spring-framework/reference/integration/scheduling.html"
+  ],
+  [
+    "S35",
+    "Spring Boot task execution",
+    "https://docs.spring.io/spring-boot/reference/features/task-execution-and-scheduling.html"
+  ],
+  [
+    "S36",
+    "Java CompletableFuture API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CompletableFuture.html"
+  ],
+  [
+    "S37",
+    "Spring transaction bound events",
+    "https://docs.spring.io/spring-framework/reference/data-access/transaction/event.html"
+  ],
+  [
+    "S38",
+    "AWS transactional outbox pattern",
+    "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html"
+  ],
+  [
+    "S39",
+    "Spring Boot application testing",
+    "https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html"
+  ],
+  [
+    "S40",
+    "Spring MockitoBean and MockitoSpyBean",
+    "https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html"
+  ],
+  [
+    "S41",
+    "Testcontainers PostgreSQL module",
+    "https://java.testcontainers.org/modules/databases/postgres/"
+  ],
+  [
+    "S42",
+    "PostgreSQL using EXPLAIN",
+    "https://www.postgresql.org/docs/current/using-explain.html"
+  ],
+  [
+    "S43",
+    "PostgreSQL EXPLAIN command",
+    "https://www.postgresql.org/docs/current/sql-explain.html"
+  ],
+  [
+    "S47",
+    "HikariCP pool sizing guidance",
+    "https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing"
+  ],
+  [
+    "S48",
+    "Spring Boot metrics",
+    "https://docs.spring.io/spring-boot/reference/actuator/metrics.html"
+  ],
+  [
+    "S51",
+    "Kubernetes startup readiness and liveness probes",
+    "https://kubernetes.io/docs/concepts/workloads/pods/probes/"
+  ],
+  [
+    "S52",
+    "Google SRE service level objectives",
+    "https://sre.google/sre-book/service-level-objectives/"
+  ],
+  [
+    "S53",
+    "Resilience4j circuit breaker",
+    "https://resilience4j.readme.io/docs/circuitbreaker"
+  ],
+  [
+    "S55",
+    "AWS timeouts retries and backoff with jitter",
+    "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+  ],
+  [
+    "S60",
+    "Java Collection API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html"
+  ],
+  [
+    "S61",
+    "Java List API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html"
+  ],
+  [
+    "S62",
+    "Java Map API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html"
+  ],
+  [
+    "S63",
+    "Java Set API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html"
+  ],
+  [
+    "S64",
+    "Java Deque API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Deque.html"
+  ],
+  [
+    "S65",
+    "Java Arrays API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html"
+  ],
+  [
+    "S66",
+    "Java Collectors API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html"
+  ],
+  [
+    "S67",
+    "Java String API",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html"
+  ],
+  [
+    "S68",
+    "PostgreSQL SELECT command",
+    "https://www.postgresql.org/docs/current/sql-select.html"
+  ],
+  [
+    "S71",
+    "PostgreSQL multicolumn indexes",
+    "https://www.postgresql.org/docs/current/indexes-multicolumn.html"
+  ],
+  [
+    "S73",
+    "Kubernetes cluster components",
+    "https://kubernetes.io/docs/concepts/overview/components/"
+  ],
+  [
+    "S75",
+    "Kubernetes Deployments",
+    "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+  ],
+  [
+    "S76",
+    "Kubernetes container resource requests and limits",
+    "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+  ],
+  [
+    "S78",
+    "Kubernetes Ingress",
+    "https://kubernetes.io/docs/concepts/services-networking/ingress/"
+  ],
+  [
+    "S80",
+    "Kubernetes Horizontal Pod Autoscaling",
+    "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/"
+  ],
+  [
+    "S89",
+    "Amazon VPC subnets",
+    "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html"
+  ],
+  [
+    "S91",
+    "Amazon VPC NAT gateways",
+    "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+  ],
+  [
+    "S94",
+    "AWS IAM roles and temporary credentials",
+    "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"
+  ],
+  [
+    "S95",
+    "Application Load Balancer subnet configuration",
+    "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
+  ],
+  [
+    "S98",
+    "AWS container service decision guide",
+    "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/choosing-aws-container-service.html"
+  ],
+  [
+    "S102",
+    "RDS Multi AZ DB instance deployments",
+    "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html"
+  ],
+  [
+    "S104",
+    "Amazon SQS visibility timeout",
+    "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+  ],
+  [
+    "S105",
+    "Amazon SQS FIFO delivery logic",
+    "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
+  ],
+  [
+    "S106",
+    "AWS messaging service decision guide",
+    "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/sns-or-sqs-or-eventbridge.html"
+  ],
+  [
+    "S111",
+    "AWS disaster recovery objectives",
+    "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html"
+  ],
+  [
+    "S113",
+    "Princeton Algorithms performance reference",
+    "https://algs4.cs.princeton.edu/cheatsheet/"
+  ],
+  [
+    "S114",
+    "Java 21 Arrays sorting and searching contracts",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html"
+  ],
+  [
+    "S116",
+    "PostgreSQL index types",
+    "https://www.postgresql.org/docs/current/indexes-types.html"
+  ],
+  [
+    "S118",
+    "Apache JMeter best practices",
+    "https://jmeter.apache.org/usermanual/best-practices.html"
+  ],
+  [
+    "S119",
+    "Amazon EC2 CPU options and virtual CPUs",
+    "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html"
+  ],
+  [
+    "S120",
+    "Amazon EBS I O characteristics and monitoring",
+    "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-io-characteristics.html"
+  ],
+  [
+    "S121",
+    "Gilbert and Lynch Perspectives on the CAP Theorem",
+    "https://dspace.mit.edu/entities/publication/dfcb6512-af44-4fc9-8e8b-1a8f28f1b53a"
+  ],
+  [
+    "S122",
+    "PostgreSQL streaming replication and standby behavior",
+    "https://www.postgresql.org/docs/current/warm-standby.html"
+  ],
+  [
+    "S123",
+    "RFC 9700 OAuth 2 security best current practice",
+    "https://www.rfc-editor.org/rfc/rfc9700.html"
+  ],
+  [
+    "S125",
+    "Lewis and colleagues Retrieval Augmented Generation",
+    "https://arxiv.org/abs/2005.11401"
+  ],
+  [
+    "S126",
+    "AWS retrieval augmented generation options",
+    "https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/introduction.html"
+  ],
+  [
+    "S127",
+    "GitLab architecture design documents",
+    "https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/"
+  ],
+  [
+    "S128",
+    "AWS architectural decision record process",
+    "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html"
+  ],
+  [
+    "S129",
+    "Google SRE postmortem culture",
+    "https://sre.google/sre-book/postmortem-culture/"
+  ],
+  [
+    "S130",
+    "Google SRE handling overload",
+    "https://sre.google/sre-book/handling-overload/"
+  ],
+  [
+    "S132",
+    "AWS Step Functions integration with DynamoDB",
+    "https://docs.aws.amazon.com/step-functions/latest/dg/connect-ddb.html"
+  ],
+  [
+    "S135",
+    "PostgreSQL constraints",
+    "https://www.postgresql.org/docs/current/ddl-constraints.html"
+  ],
+  [
+    "S138",
+    "Stripe idempotent request contract",
+    "https://docs.stripe.com/api/idempotent_requests"
+  ],
+  [
+    "S140",
+    "Aalto University normalization and functional dependencies",
+    "https://opencs.aalto.fi/en/courses/databases/part-8/4-normalization"
+  ],
+  [
+    "S141",
+    "AWS Pricing Calculator",
+    "https://calculator.aws/"
+  ],
+  [
+    "S142",
+    "PostgreSQL continuous archiving and point in time recovery",
+    "https://www.postgresql.org/docs/current/continuous-archiving.html"
+  ],
+  [
+    "S143",
+    "AWS generative AI access and retrieval security",
+    "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture-generative-ai/gen-ai-agents.html"
+  ],
+  [
+    "S144",
+    "Robert C Martin The Single Responsibility Principle",
+    "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html"
+  ],
+  [
+    "S145",
+    "Robert C Martin The Open Closed Principle",
+    "https://condor.depaul.edu/dmumaugh/OOT/Design-Principles/ocp.pdf"
+  ],
+  [
+    "S146",
+    "Robert C Martin The Liskov Substitution Principle",
+    "https://condor.depaul.edu/dmumaugh/OOT/Design-Principles/lsp.pdf"
+  ],
+  [
+    "S147",
+    "Robert C Martin The Interface Segregation Principle",
+    "https://condor.depaul.edu/dmumaugh/OOT/Design-Principles/isp.pdf"
+  ],
+  [
+    "S148",
+    "Robert C Martin The Dependency Inversion Principle",
+    "https://condor.depaul.edu/dmumaugh/OOT/Design-Principles/dip.pdf"
+  ],
+  [
+    "S149",
+    "Gamma Helm Johnson and Vlissides Design Patterns",
+    "https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-9780201633610"
+  ],
+  [
+    "S150",
+    "Spring Framework proxying mechanisms",
+    "https://docs.spring.io/spring-framework/reference/6.2/core/aop/proxying.html"
+  ],
+  [
+    "S151",
+    "Java checked exception rules",
+    "https://docs.oracle.com/javase/tutorial/essential/exceptions/catchOrDeclare.html"
+  ],
+  [
+    "S152",
+    "Java BigDecimal",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html"
+  ],
+  [
+    "S153",
+    "Java generic types",
+    "https://docs.oracle.com/javase/tutorial/java/generics/types.html"
+  ],
+  [
+    "S154",
+    "Java ListIterator",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ListIterator.html"
+  ],
+  [
+    "S155",
+    "Java Predicate",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html"
+  ],
+  [
+    "S156",
+    "Java Stream terminal operations",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html"
+  ],
+  [
+    "S157",
+    "Java Collectors",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html"
+  ],
+  [
+    "S158",
+    "Java Locale",
+    "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Locale.html"
+  ],
+  [
+    "S159",
+    "Spring Framework Bean annotation",
+    "https://docs.spring.io/spring-framework/reference/6.2/core/beans/java/bean-annotation.html"
+  ],
+  [
+    "S160",
+    "Spring Cloud AWS Secrets Manager integration",
+    "https://docs.awspring.io/spring-cloud-aws/docs/3.4.2/reference/html/index.html#secrets-manager-integration"
+  ],
+  [
+    "S161",
+    "ECS secret environment variable updates",
+    "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/secrets-envvar-secrets-manager.html"
+  ],
+  [
+    "S162",
+    "AWS Secrets Manager encryption",
+    "https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html"
+  ],
+  [
+    "S163",
+    "Jakarta Persistence relationship defaults",
+    "https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1"
+  ],
+  [
+    "S164",
+    "Hibernate ORM 6.6 fetching",
+    "https://docs.hibernate.org/orm/6.6/userguide/html_single/"
+  ],
+  [
+    "S165",
+    "Spring Data JPA projections",
+    "https://docs.spring.io/spring-data/jpa/reference/repositories/projections.html"
+  ],
+  [
+    "S166",
+    "PostgreSQL JSON types",
+    "https://www.postgresql.org/docs/17/datatype-json.html"
+  ],
+  [
+    "S167",
+    "MongoDB data modeling",
+    "https://www.mongodb.com/docs/manual/data-modeling/"
+  ],
+  [
+    "S168",
+    "AWS OSI model overview",
+    "https://aws.amazon.com/what-is/osi-model/"
+  ],
+  [
+    "S169",
+    "ALB HTTPS listeners",
+    "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html"
+  ],
+  [
+    "S170",
+    "AWS WAF request processing",
+    "https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works.html"
+  ],
+  [
+    "S171",
+    "Network Load Balancers",
+    "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+  ],
+  [
+    "S172",
+    "Google Cloud service comparison",
+    "https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison"
+  ],
+  [
+    "S173",
+    "Google Cloud VPC overview",
+    "https://docs.cloud.google.com/vpc/docs/overview"
+  ],
+  [
+    "S174",
+    "Google Cloud Run overview",
+    "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run"
+  ],
+  [
+    "S175",
+    "Google Cloud Pub Sub and Cloud Tasks",
+    "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks"
+  ],
+  [
+    "S176",
+    "GKE and Cloud Run",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gke-and-cloud-run"
+  ],
+  [
+    "S177",
+    "Google Cloud IAM hierarchy",
+    "https://docs.cloud.google.com/iam/docs/resource-hierarchy-access-control"
+  ],
+  [
+    "S178",
+    "Google Cloud Pub Sub subscriptions",
+    "https://docs.cloud.google.com/pubsub/docs/subscription-overview"
+  ],
+  [
+    "S179",
+    "Cursor coding agent practices",
+    "https://cursor.com/blog/agent-best-practices"
+  ],
+  [
+    "S180",
+    "Cursor rules",
+    "https://cursor.com/docs/rules"
+  ],
+  [
+    "S181",
+    "Cursor MCP integration",
+    "https://cursor.com/docs/mcp"
+  ],
+  [
+    "S182",
+    "Claude Code skills",
+    "https://code.claude.com/docs/en/skills"
+  ],
+  [
+    "S183",
+    "Claude Code MCP integration",
+    "https://code.claude.com/docs/en/mcp"
+  ],
+  [
+    "S184",
+    "Microsoft Playwright MCP",
+    "https://github.com/microsoft/playwright-mcp"
+  ],
+  [
+    "S185",
+    "Playwright test practices",
+    "https://playwright.dev/docs/best-practices"
+  ],
+  [
+    "S186",
+    "Playwright browser isolation",
+    "https://playwright.dev/docs/browser-contexts"
+  ]
+]

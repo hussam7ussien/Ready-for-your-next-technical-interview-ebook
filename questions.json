@@ -1,0 +1,1002 @@
+[
+  {
+    "number": 1,
+    "question": "How should a candidate prepare for an advanced technical interview?",
+    "answer": "Review the core ideas, practise explaining a small example, and solve problems aloud. Prepare one design decision and one incident story from your own work."
+  },
+  {
+    "number": 2,
+    "question": "How should an interviewer choose questions?",
+    "answer": "Choose the skills needed for the role first. Ask a small set of useful questions, follow the reasoning, and record what the candidate showed and where help was needed."
+  },
+  {
+    "number": 3,
+    "question": "What is the difference between an array and a List?",
+    "answer": "An array has a fixed length. A List offers collection operations and can grow when its implementation allows it. Arrays can store primitives; a List uses reference types such as Integer."
+  },
+  {
+    "number": 4,
+    "question": "Why does String concat seem to do nothing?",
+    "answer": "String is immutable. concat returns a new result. Assign it back, such as text = text.concat(\"a\"), if you want the variable to hold that result."
+  },
+  {
+    "number": 5,
+    "question": "Can an enhanced for loop use int with a List of Integer?",
+    "answer": "Yes. Java unboxes each Integer into int. A null element causes NullPointerException during unboxing. Using Integer keeps the nullable reference."
+  },
+  {
+    "number": 6,
+    "question": "What is the difference between equals and double equals?",
+    "answer": "For object references, == checks whether both refer to the same object. equals checks the type's defined equality. For String content, use equals."
+  },
+  {
+    "number": 7,
+    "question": "How do List of and Arrays asList differ?",
+    "answer": "List.of returns an unmodifiable list and rejects null elements. Arrays.asList returns a fixed-size view backed by the array; set is allowed, but add and remove are not."
+  },
+  {
+    "number": 8,
+    "question": "When should you use a List a Set or a Map?",
+    "answer": "Use List for an ordered sequence, Set for unique values, and Map for lookup by a key. Choose based on the operation you need most."
+  },
+  {
+    "number": 9,
+    "question": "What does Set add return for a duplicate?",
+    "answer": "It returns false when an equal value is already present. A newly added value returns true. This makes duplicate detection simple."
+  },
+  {
+    "number": 10,
+    "question": "How do HashMap put and putIfAbsent differ?",
+    "answer": "put adds a mapping or replaces the existing value. putIfAbsent adds the value only if the key is missing or its current value is null. It keeps an existing value that is not null."
+  },
+  {
+    "number": 11,
+    "question": "How do containsKey and containsValue differ?",
+    "answer": "containsKey looks for a key. containsValue searches stored values. In HashMap, key lookup is normally constant time on average; searching values is linear."
+  },
+  {
+    "number": 12,
+    "question": "What is a hash collision?",
+    "answer": "Different keys can share a hash bucket. The map still checks equality to find the correct key. A collision does not mean the keys are equal."
+  },
+  {
+    "number": 13,
+    "question": "Why should a Map key be stable?",
+    "answer": "Changing fields used by equals or hashCode after insertion can make lookup fail. Prefer immutable keys or fields that stay unchanged while the key is stored."
+  },
+  {
+    "number": 14,
+    "question": "What is the remove trap with a List of Integer?",
+    "answer": "remove(1) removes the element at index 1. remove(Integer.valueOf(1)) removes the first value equal to 1. The argument type selects the overload."
+  },
+  {
+    "number": 15,
+    "question": "What is the difference between a stack and a queue?",
+    "answer": "A stack is last in first out. A FIFO queue is first in first out. ArrayDeque can support both patterns; use the matching push/pop or offer/poll operations."
+  },
+  {
+    "number": 16,
+    "question": "When is LinkedList useful compared with ArrayList?",
+    "answer": "LinkedList supports cheap changes at the ends or through an already positioned iterator. Indexed access is linear. ArrayList is usually a useful default for indexed access and iteration."
+  },
+  {
+    "number": 17,
+    "question": "How do filter and map differ?",
+    "answer": "filter keeps matching elements. map changes each element into a result. For example, filter active users, then map each user to an email address."
+  },
+  {
+    "number": 18,
+    "question": "How do you remove duplicates in a Stream?",
+    "answer": "Use distinct. It uses element equality. reduce combines values into one result; it is not the usual duplicate-removal operation."
+  },
+  {
+    "number": 19,
+    "question": "When do Stream operations execute?",
+    "answer": "Intermediate operations are lazy. A terminal operation such as toList or sum drives the pipeline. Required business side effects should not depend on peek running."
+  },
+  {
+    "number": 20,
+    "question": "What is the identity value in reduce?",
+    "answer": "It is a starting value that leaves the operation unchanged: zero for addition and one for multiplication. Parallel reduction also needs a suitable associative operation."
+  },
+  {
+    "number": 21,
+    "question": "How do map and flatMap differ?",
+    "answer": "map produces one result per input. flatMap produces and joins streams from each input. Use it to turn a list of lists into one sequence of elements."
+  },
+  {
+    "number": 22,
+    "question": "Does Stream toList return a mutable ArrayList?",
+    "answer": "No. Stream.toList returns an unmodifiable list. Use Collectors.toCollection(ArrayList::new) when the result must be a mutable ArrayList."
+  },
+  {
+    "number": 23,
+    "question": "Why can a parallel Stream be slower?",
+    "answer": "Splitting, coordination, and merging have a cost. Small inputs, cheap work, blocking calls, and contention can remove the expected benefit. Measure the actual workload."
+  },
+  {
+    "number": 24,
+    "question": "When is linear search better than sorting first?",
+    "answer": "For one search in a small unsorted array, a linear scan is often enough. Sorting first adds work. Sorting becomes more useful when many later operations reuse the order."
+  },
+  {
+    "number": 25,
+    "question": "What does binary search require?",
+    "answer": "A sorted array or another search space with a monotonic condition. Each step must safely remove part of the remaining range and make progress."
+  },
+  {
+    "number": 26,
+    "question": "What do time complexity and space complexity mean?",
+    "answer": "Time complexity describes how work grows with input size. Space complexity describes memory growth. State whether the memory count includes output, temporary arrays, and the recursion stack."
+  },
+  {
+    "number": 27,
+    "question": "What does stable sorting mean?",
+    "answer": "Equal sort keys keep their original relative order. This matters when sorting records by several fields or preserving an earlier ordering."
+  },
+  {
+    "number": 28,
+    "question": "How would you choose between merge quick and heap sort?",
+    "answer": "Merge sort gives stable order with a temporary buffer. Quick sort often performs well on arrays but needs careful partitioning. Heap sort gives a worst-case O(n log n) bound with little extra memory."
+  },
+  {
+    "number": 29,
+    "question": "Does quick sort always use constant extra memory?",
+    "answer": "No. Recursive quick sort also uses stack memory. The simple version can use O(n) stack space in its worst case, even though partitioning uses little local memory."
+  },
+  {
+    "number": 30,
+    "question": "What information would you clarify before writing code?",
+    "answer": ""
+  },
+  {
+    "number": 31,
+    "question": "How would you explain the correctness of your solution?",
+    "answer": ""
+  },
+  {
+    "number": 32,
+    "question": "Which cases would you test before finishing?",
+    "answer": ""
+  },
+  {
+    "number": 33,
+    "question": "What does Single Responsibility mean in practical code?",
+    "answer": "Keep code with the same reason for change together. Separate concerns such as pricing policy, persistence, and email formatting when they change independently. A service can coordinate several collaborators while keeping one clear business purpose."
+  },
+  {
+    "number": 34,
+    "question": "Does Open Closed mean you must never edit an existing class?",
+    "answer": "No. Create an extension point for a useful, known kind of change. A new shipping policy can implement the existing contract without changing Checkout. Bug fixes and new requirements can still require edits."
+  },
+  {
+    "number": 35,
+    "question": "How can an implementation violate Liskov Substitution?",
+    "answer": "It breaks behavior promised by the shared contract, such as rejecting inputs the contract accepts or failing to provide a promised result. A read-only repository should not claim a save capability that it cannot provide. Judge the documented contract, not the class name."
+  },
+  {
+    "number": 36,
+    "question": "When is Interface Segregation useful?",
+    "answer": "When clients depend on a large interface but need only a small part. Split capabilities around client needs, such as OrderReader and OrderWriter. One implementation can still provide both interfaces."
+  },
+  {
+    "number": 37,
+    "question": "What does Dependency Inversion change?",
+    "answer": "Business policy depends on a contract such as PaymentGateway. The provider adapter implements that contract and keeps provider-specific HTTP code outside the policy."
+  },
+  {
+    "number": 38,
+    "question": "How do dependency injection and dependency inversion differ?",
+    "answer": "DI supplies dependencies from outside an object. DIP directs code dependencies toward abstractions. Injecting a concrete provider client uses DI but can still couple business code to that provider."
+  },
+  {
+    "number": 39,
+    "question": "When would you use Strategy?",
+    "answer": "Use it for interchangeable behaviors such as shipping policies. The caller delegates through one contract, and every policy must keep the same input and output expectations."
+  },
+  {
+    "number": 40,
+    "question": "How do Simple Factory Factory Method and Abstract Factory differ?",
+    "answer": "Simple Factory centralizes a creation choice. Factory Method lets subclasses choose a product. Abstract Factory creates a compatible family of products. Explain which creation decision varies."
+  },
+  {
+    "number": 41,
+    "question": "When is Builder useful?",
+    "answer": "Use it for several optional settings or clear construction steps. Validate required values. A constructor is often simpler for a small object with few options."
+  },
+  {
+    "number": 42,
+    "question": "How do Adapter and Facade differ?",
+    "answer": "Adapter translates between interfaces, such as wrapping an older mail client. Facade provides a simpler entry point to several components, such as a checkout workflow."
+  },
+  {
+    "number": 43,
+    "question": "How do Decorator and Proxy differ?",
+    "answer": "Decorator adds behavior around a collaborator with the same contract. Proxy controls access or invocation, as with Spring transaction interception. Their structures can look similar; explain their intent."
+  },
+  {
+    "number": 44,
+    "question": "How do Strategy and State differ?",
+    "answer": "Strategy supplies a selected behavior. State changes behavior according to the object's current state and its transitions. A small state machine may only need an enum and explicit checks."
+  },
+  {
+    "number": 45,
+    "question": "Does Observer guarantee that an event survives an application crash?",
+    "answer": "No. Observer describes listener notification. In-memory events can disappear after a crash. Persist the intent and use suitable durable delivery when recovery is required."
+  },
+  {
+    "number": 46,
+    "question": "Is a Spring singleton one instance across every app replica?",
+    "answer": "No. Spring singleton scope is per bean definition per container. Different application processes can have different instances. Shared mutable state still needs safe coordination."
+  },
+  {
+    "number": 47,
+    "question": "When should you avoid adding a design pattern?",
+    "answer": "Avoid it when extra classes and interfaces solve no real problem. Introduce a pattern when it makes an actual variation, contract, or responsibility easier to manage."
+  },
+  {
+    "number": 48,
+    "question": "What does Spring Boot add to Spring?",
+    "answer": "It helps configure and start Spring applications through auto-configuration, starters, and useful defaults. It reduces setup work; the application still needs clear design and correct configuration."
+  },
+  {
+    "number": 49,
+    "question": "What does SpringBootApplication include?",
+    "answer": "It combines configuration, auto-configuration, and component scanning. Keep the main class in an appropriate root package so scanning finds the intended components."
+  },
+  {
+    "number": 50,
+    "question": "Why prefer constructor injection?",
+    "answer": "Required dependencies are visible when the object is created. It supports final fields and makes plain unit tests easier to write."
+  },
+  {
+    "number": 51,
+    "question": "How do Primary and Qualifier differ?",
+    "answer": "Primary marks a preferred candidate for a single dependency. Qualifier narrows the candidates at an injection point. Use meaningful qualifiers when the choice is part of the design."
+  },
+  {
+    "number": 52,
+    "question": "Is a singleton bean automatically thread safe?",
+    "answer": "No. Singleton describes scope. Several requests can use the same instance at once, so shared mutable fields need safe coordination."
+  },
+  {
+    "number": 53,
+    "question": "Why is one prototype injected into a singleton reused?",
+    "answer": "Injection normally happens once when the singleton is created. Use ObjectProvider or another suitable lookup when a new prototype is needed for each operation."
+  },
+  {
+    "number": 54,
+    "question": "Does a production profile always override a development profile?",
+    "answer": "Profile names have no built-in ranking. For conflicting values in the same location group, later active profiles win. Property-source priority also matters."
+  },
+  {
+    "number": 55,
+    "question": "Can an environment variable override application properties?",
+    "answer": "Yes. Among common sources, command-line arguments rank above JVM system properties, then environment variables, then configuration data. An environment variable can override application.properties, but not a conflicting JVM system property in this setup."
+  },
+  {
+    "number": 56,
+    "question": "When should you use ConfigurationProperties?",
+    "answer": "Use it to group related settings into a typed object. It makes validation and configuration clearer than many separate Value expressions."
+  },
+  {
+    "number": 57,
+    "question": "What can a circular dependency suggest?",
+    "answer": "Responsibilities may be mixed between services. A coordinator or a clearer service boundary can remove the cycle. Delaying bean creation does not fix the design itself."
+  },
+  {
+    "number": 58,
+    "question": "Where should validation happen?",
+    "answer": "Validate request shape at the API boundary, then enforce business rules in the service and database. Valid syntax does not prove ownership, stock availability, or permission."
+  },
+  {
+    "number": 59,
+    "question": "What does Valid do on a request body?",
+    "answer": "It triggers the configured validation for that input. Add constraints such as NotNull and Min, and use cascading validation for nested objects."
+  },
+  {
+    "number": 60,
+    "question": "How do NotNull and NotBlank differ?",
+    "answer": "NotNull rejects null. NotBlank also rejects an empty string or a string made only of whitespace. Choose the constraint for the actual input rule."
+  },
+  {
+    "number": 61,
+    "question": "What is the purpose of RestControllerAdvice?",
+    "answer": "It handles selected controller-layer exceptions and maps them to consistent HTTP responses. It does not catch every filter failure or background-task exception."
+  },
+  {
+    "number": 62,
+    "question": "How do HTTP 401 and 403 differ?",
+    "answer": "In a typical API, 401 means authentication is missing or invalid. 403 means access is denied. Browser login flows and custom handlers can use different responses."
+  },
+  {
+    "number": 63,
+    "question": "When should an API return 201 or 202?",
+    "answer": "Use 201 when a resource has been created. Use 202 when work has been accepted but is still incomplete. Provide a way to check the pending operation."
+  },
+  {
+    "number": 64,
+    "question": "Why return a DTO instead of a JPA entity?",
+    "answer": "A DTO exposes the fields the client needs and gives the API a clear contract. It also reduces accidental lazy loading and exposure of internal fields."
+  },
+  {
+    "number": 65,
+    "question": "Do you always need save after changing a loaded entity?",
+    "answer": "Not when the entity stays managed in a suitable transaction and dirty checking applies. Use save for persistence operations where needed; it does not replace the transaction boundary."
+  },
+  {
+    "number": 66,
+    "question": "Are save flush and commit the same?",
+    "answer": "No. save persists or merges. Flush sends pending changes to the database. Commit completes the transaction successfully. Flushed SQL can still be rolled back."
+  },
+  {
+    "number": 67,
+    "question": "Why can lazy loading fail after the context closes?",
+    "answer": "The relationship has not been loaded and its session is no longer available. Fetch the required data inside the boundary or map it to a DTO before returning."
+  },
+  {
+    "number": 68,
+    "question": "What is the N plus one query problem?",
+    "answer": "One query loads a group of entities, then extra queries load related data for individual entities. Read the actual SQL and count round trips instead of guessing from annotations."
+  },
+  {
+    "number": 69,
+    "question": "Does EAGER loading guarantee one SQL join?",
+    "answer": "No. It requires the relationship to be available, but the provider can use extra queries. A deliberate fetch plan is still needed."
+  },
+  {
+    "number": 70,
+    "question": "How can you fix N plus one queries?",
+    "answer": "Use a suitable fetch join, entity graph, batch fetch, or DTO projection. Choose based on the result shape and pagination needs, then inspect the generated SQL."
+  },
+  {
+    "number": 71,
+    "question": "What does Transactional do?",
+    "answer": "It defines a transaction boundary around an intercepted operation. Participating database changes can then commit together or roll back together."
+  },
+  {
+    "number": 72,
+    "question": "What does the transaction interceptor do?",
+    "answer": "It reads the transaction settings, starts or joins a transaction, calls the method, then decides whether to commit or roll back. It runs around the target method."
+  },
+  {
+    "number": 73,
+    "question": "Why can self invocation bypass Transactional?",
+    "answer": "An internal call on the same object normally bypasses the Spring proxy. Call a separate injected transactional bean or put the boundary on the externally called operation."
+  },
+  {
+    "number": 74,
+    "question": "Which exceptions trigger rollback by default?",
+    "answer": "RuntimeException and Error trigger rollback under the default rules. Checked exceptions do not. Configure rollbackFor when a checked failure must roll back the work."
+  },
+  {
+    "number": 75,
+    "question": "How do you roll back for IOException?",
+    "answer": "Use @Transactional(rollbackFor = IOException.class) on an intercepted method. The string argument to Transactional selects a transaction manager; it is not a rollback rule."
+  },
+  {
+    "number": 76,
+    "question": "What if a transactional method catches its own exception?",
+    "answer": "If no other boundary or resource marked rollback-only, the interceptor can see normal completion and commit. Catching an error does not automatically mean the operation should be considered successful."
+  },
+  {
+    "number": 77,
+    "question": "What does REQUIRED propagation mean?",
+    "answer": "Join the current transaction if one exists; otherwise start one. Separate intercepted REQUIRED methods can share one physical database transaction."
+  },
+  {
+    "number": 78,
+    "question": "Why can catching an inner REQUIRED exception still end in rollback?",
+    "answer": "The inner interceptor may have marked the shared transaction rollback-only. The outer catch does not remove that marker. Commit then fails with UnexpectedRollbackException."
+  },
+  {
+    "number": 79,
+    "question": "What does REQUIRES_NEW change?",
+    "answer": "It uses an independent transaction while the outer one is suspended. Its commit or rollback is separate. It needs a real proxy crossing and often another database connection."
+  },
+  {
+    "number": 80,
+    "question": "What is the benefit of readOnly true?",
+    "answer": "It tells the stack that the operation is intended to read. It can reduce tracking or flush work. It is not a universal write lock and does not automatically select a replica."
+  },
+  {
+    "number": 81,
+    "question": "Does a database transaction include an email provider?",
+    "answer": "No, not in an ordinary local transaction. A database rollback cannot recall a sent email. Use a durable workflow when the external action must be recovered."
+  },
+  {
+    "number": 82,
+    "question": "Why is incrementing a shared int unsafe?",
+    "answer": "Increment reads, calculates, and writes. Two threads can overwrite each other's updates. The problem is the shared compound operation, not every use of int."
+  },
+  {
+    "number": 83,
+    "question": "How do volatile and AtomicInteger differ?",
+    "answer": "volatile supports visibility of writes to a field. It does not make count++ atomic. AtomicInteger provides atomic read-modify-write operations for that value."
+  },
+  {
+    "number": 84,
+    "question": "Why is adding to one ArrayList from parallel tasks unsafe?",
+    "answer": "Multiple threads change the same internal storage and size without coordination. Updates can be lost or the state can become inconsistent."
+  },
+  {
+    "number": 85,
+    "question": "How does map followed by toList solve parallel result collection?",
+    "answer": "Each task returns its result and the Stream implementation safely collects those results. It removes external shared-list mutation. The mapper's own side effects must still be safe."
+  },
+  {
+    "number": 86,
+    "question": "Is ConcurrentHashMap enough for a check then insert sequence?",
+    "answer": "Not if the sequence must be one atomic decision. Use a suitable atomic operation such as computeIfAbsent. Thread-safe individual calls do not make every multi-step workflow safe."
+  },
+  {
+    "number": 87,
+    "question": "Why can putIfAbsent still run a database load twice?",
+    "answer": "Java evaluates the load argument before calling putIfAbsent. Two callers can both load. computeIfAbsent defers the computation under that map operation's rules."
+  },
+  {
+    "number": 88,
+    "question": "Is Transactional alone enough to prevent overselling?",
+    "answer": "No. Protect the stock decision with a conditional update, a version check, or a suitable lock, and keep related writes in one transaction."
+  },
+  {
+    "number": 89,
+    "question": "How do optimistic and pessimistic locking differ?",
+    "answer": "Optimistic locking checks a version and rejects a conflict. Pessimistic locking makes competing operations wait for a lock. Both need failure handling; waiting can also lead to deadlocks."
+  },
+  {
+    "number": 90,
+    "question": "What does Cacheable do?",
+    "answer": "It can return a cached result without running the target method. On a miss, the method normally runs and its result is stored. A working cache provider and interception are required."
+  },
+  {
+    "number": 91,
+    "question": "How do CachePut and CacheEvict differ?",
+    "answer": "CachePut runs the method and stores its returned value. CacheEvict removes entries so later readers can reload them. A void update does not supply an updated price to CachePut."
+  },
+  {
+    "number": 92,
+    "question": "Why include tenant ID in a cache key?",
+    "answer": "Different tenants can have the same product ID. The key must include the trusted tenant scope so one tenant cannot receive another tenant's cached result."
+  },
+  {
+    "number": 93,
+    "question": "What is a cache stampede?",
+    "answer": "Many requests miss the same key and load it together. Single flight, bounded loading, expiry jitter, or a suitable lock can reduce the repeated work."
+  },
+  {
+    "number": 94,
+    "question": "Why invalidate a cache after database commit?",
+    "answer": "It avoids publishing a value for a transaction that later rolls back. It still needs a freshness policy because an overlapping reader can repopulate an older value."
+  },
+  {
+    "number": 95,
+    "question": "What should happen if the cache fails?",
+    "answer": "Use the database only if it can safely absorb the fallback load. Bound concurrency and provide an appropriate degraded response for noncritical reads."
+  },
+  {
+    "number": 96,
+    "question": "How do authentication and authorization differ?",
+    "answer": "Authentication checks who the caller is. Authorization checks what that caller may do, including access to this resource and this tenant."
+  },
+  {
+    "number": 97,
+    "question": "How do OAuth JWT and OpenID Connect differ?",
+    "answer": "OAuth defines authorization flows. JWT is a token format. OpenID Connect adds an identity layer over OAuth. An OAuth access token can be a JWT or an opaque token."
+  },
+  {
+    "number": 98,
+    "question": "How do access and refresh tokens differ?",
+    "answer": "An access token goes to the resource API. A refresh token goes to the authorization server to obtain another access token under its policy. Protect refresh tokens carefully."
+  },
+  {
+    "number": 99,
+    "question": "Does decoding a JWT prove it is valid?",
+    "answer": "No. Verify its signature, allowed algorithm, issuer, audience, expiry, and other required claims. Readable token content is not proof of trust."
+  },
+  {
+    "number": 100,
+    "question": "How do CORS and CSRF differ?",
+    "answer": "CORS controls browser access to cross-origin responses. CSRF involves unwanted actions using credentials the browser sends automatically. CORS is not authentication or a substitute for CSRF protection."
+  },
+  {
+    "number": 101,
+    "question": "What is the tradeoff between sessions JWTs and opaque tokens?",
+    "answer": "Sessions and opaque tokens normally need a server-side lookup. A signed JWT can be checked locally, but immediate revocation needs an extra design. Choose based on the required behavior."
+  },
+  {
+    "number": 102,
+    "question": "What does Async change?",
+    "answer": "An intercepted Async call submits work to an executor. The caller can continue before that work finishes. This reduces caller waiting; it does not necessarily reduce the work's duration."
+  },
+  {
+    "number": 103,
+    "question": "Why can a try catch miss an exception from a void async method?",
+    "answer": "The method can fail later on another thread. Use AsyncUncaughtExceptionHandler for execution failures of void async methods. Submission failures, such as rejection, can still reach the caller immediately."
+  },
+  {
+    "number": 104,
+    "question": "When should an async method return CompletableFuture?",
+    "answer": "Use it when the caller needs to observe success, failure, or a result. Attach completion handling. Calling join waits, so it blocks the calling thread."
+  },
+  {
+    "number": 105,
+    "question": "Does the caller transaction automatically move to an async thread?",
+    "answer": "No, in the ordinary thread-bound transaction model. A worker can start its own transaction through a separate transactional boundary. Its result is independent of the caller's transaction."
+  },
+  {
+    "number": 106,
+    "question": "Why use a bounded executor?",
+    "answer": "It limits workers and queued tasks. Without limits, overload can become high memory use and long waiting. Decide what happens when submission is rejected."
+  },
+  {
+    "number": 107,
+    "question": "Is an application event enough for reliable notifications?",
+    "answer": "No. A process crash can lose in-memory work. If delivery must be recovered, persist the intent and use a durable queue or another recoverable workflow."
+  },
+  {
+    "number": 108,
+    "question": "How do unit and integration tests differ?",
+    "answer": "A unit test checks a small behavior with controlled dependencies. An integration test checks real interactions, such as SQL, transactions, security filters, or service boundaries."
+  },
+  {
+    "number": 109,
+    "question": "How do Mock and MockitoBean differ?",
+    "answer": "Mock creates a Mockito double for the test. MockitoBean replaces or supplies a bean in a Spring test context. A plain Mockito test does not create Spring transaction interception."
+  },
+  {
+    "number": 110,
+    "question": "When should you use WebMvcTest?",
+    "answer": "Use it for focused MVC behavior such as routing, request validation, responses, and configured security filters. Supply the controller's required collaborators."
+  },
+  {
+    "number": 111,
+    "question": "When should you use DataJpaTest?",
+    "answer": "Use it for repository and persistence behavior. For database-specific SQL or locking, use the same database engine as production, often through Testcontainers."
+  },
+  {
+    "number": 112,
+    "question": "Does SpringBootTest start a real web server by default?",
+    "answer": "No. Use an appropriate webEnvironment such as RANDOM_PORT when the test needs real HTTP handling. A loaded context is not automatically a real-server test."
+  },
+  {
+    "number": 113,
+    "question": "Why can a rollback test give false confidence?",
+    "answer": "The test may never reach commit, share an enclosing transaction, or keep lazy data accessible longer than production. Verify the real boundary for the behavior being tested."
+  },
+  {
+    "number": 114,
+    "question": "How would you test duplicate payment requests?",
+    "answer": "Send repeated and competing requests with the same operation key. Verify one logical payment and a consistent recoverable result, including timeout and crash cases."
+  },
+  {
+    "number": 115,
+    "question": "What should you inspect first in a slow query plan?",
+    "answer": "Compare estimated and actual rows, then inspect large filters, repeated inner work, and buffer access. Follow the plan from its scans upward to see where unnecessary work begins."
+  },
+  {
+    "number": 116,
+    "question": "Why might PostgreSQL ignore an existing index?",
+    "answer": "The index may not match the filter or ordering, or the query may need a large share of the table. A sequential scan can be cheaper. Check the plan and data distribution before adding another index."
+  },
+  {
+    "number": 117,
+    "question": "What does a sort spilling to disk tell you?",
+    "answer": "The sort needed more memory than its available budget and used temporary disk space. Inspect the sort method and disk usage. Consider reducing the input or using a suitable ordered index before changing memory settings for the workload."
+  },
+  {
+    "number": 118,
+    "question": "How should you validate a query tuning change?",
+    "answer": "Compare plans and observed execution on representative data, check that results remain correct, and measure the whole API request. Include index storage and write costs; one faster query does not prove the complete workload improved."
+  },
+  {
+    "number": 119,
+    "question": "How do EXPLAIN and EXPLAIN ANALYZE differ?",
+    "answer": "EXPLAIN shows the plan and estimates. EXPLAIN ANALYZE executes the statement and adds observed row counts and timing. BUFFERS adds information about database block access."
+  },
+  {
+    "number": 120,
+    "question": "Is the cost in an execution plan measured in milliseconds?",
+    "answer": "No. Cost uses planner units. Actual time from EXPLAIN ANALYZE uses milliseconds. Keep estimated cost separate from measured execution time."
+  },
+  {
+    "number": 121,
+    "question": "Is a sequential scan always bad?",
+    "answer": "No. It can be efficient for a small table or a large share of its rows. Investigate scans that do much work to return a small selective result."
+  },
+  {
+    "number": 122,
+    "question": "What does a large estimated versus actual row difference suggest?",
+    "answer": "Check statistics, uneven data, and related filter conditions. Bad row estimates can lead to poor join choices. Find where the plan first becomes inaccurate."
+  },
+  {
+    "number": 123,
+    "question": "Why do loops matter in an execution plan?",
+    "answer": "A small inner operation repeated many times can become expensive. Actual row and time figures are per-loop averages when loops exceed one, so consider the loop count."
+  },
+  {
+    "number": 124,
+    "question": "What is the difference between buffer hits and reads?",
+    "answer": "A hit finds a block in PostgreSQL's shared buffers. A read loads it into those buffers and may still use the operating system cache. Neither value is a row count."
+  },
+  {
+    "number": 125,
+    "question": "Can a fast SQL plan still belong to a slow API?",
+    "answer": "Yes. The request may wait for a connection, a lock, many separate queries, or an external service. Measure the whole request as well as the SQL."
+  },
+  {
+    "number": 126,
+    "question": "What should you ask before drawing a system design?",
+    "answer": "Ask who uses it, which operations matter, expected traffic, correctness rules, latency, availability, budget, and launch scope. State assumptions when numbers are missing."
+  },
+  {
+    "number": 127,
+    "question": "When should you choose microservices over a monolith?",
+    "answer": "Choose them when separate scaling, releases, or team ownership justify the extra network and data work. A modular monolith can be a practical starting point when those needs are small."
+  },
+  {
+    "number": 128,
+    "question": "What does 25 percent headroom mean?",
+    "answer": "Define it. Capacity 25 percent above demand means multiply demand by 1.25. Keeping 25 percent of capacity unused means divide demand by 0.75."
+  },
+  {
+    "number": 129,
+    "question": "How do latency and throughput differ?",
+    "answer": "Latency is how long one operation takes. Throughput is completed work per unit of time. A system can accept more work than it completes for a while, but waiting then grows."
+  },
+  {
+    "number": 130,
+    "question": "What is write contention?",
+    "answer": "Operations compete for the same writable resource, such as the final stock row. More app replicas can increase waiting instead of increasing useful throughput."
+  },
+  {
+    "number": 131,
+    "question": "Can you choose an instance size from orders per second alone?",
+    "answer": "No. Estimate the work per order, then measure CPU, memory, disk, connections, and dependencies under representative load. Include failure capacity and cost."
+  },
+  {
+    "number": 132,
+    "question": "What should a JMeter load test measure?",
+    "answer": "Achieved traffic, successful business operations, latency percentiles, errors, and resource limits. Include spikes and slow dependencies. A 200 response alone does not prove that an order was saved."
+  },
+  {
+    "number": 133,
+    "question": "When is a relational database a useful choice?",
+    "answer": "When related data needs transactions, constraints, joins, and clear correctness rules. Orders and inventory are common examples. Choose from access and consistency needs, not fashion."
+  },
+  {
+    "number": 134,
+    "question": "How do the first three normal forms help?",
+    "answer": "First normal form avoids repeating groups. Second removes partial dependencies on a composite key. Third removes unsuitable dependencies through non-key attributes. This reduces accidental duplication and update problems."
+  },
+  {
+    "number": 135,
+    "question": "Why use database constraints when the application validates input?",
+    "answer": "Constraints protect the shared data against competing requests and other writers. Use uniqueness, references, and suitable checks to enforce rules the database can express."
+  },
+  {
+    "number": 136,
+    "question": "What does ACID stand for?",
+    "answer": "Atomicity, Consistency, Isolation, and Durability. They describe a database transaction's behavior within its boundary. They do not automatically include a remote email or payment provider."
+  },
+  {
+    "number": 137,
+    "question": "What is PostgreSQL's default isolation level?",
+    "answer": "Read Committed. A later statement can see newer committed data. PostgreSQL treats Read Uncommitted as Read Committed, so dirty reads are still prevented."
+  },
+  {
+    "number": 138,
+    "question": "Does PostgreSQL Repeatable Read allow phantom reads?",
+    "answer": "No. PostgreSQL prevents them at that level, although the SQL standard allows them. Other anomalies, such as write skew across different rows, can still occur."
+  },
+  {
+    "number": 139,
+    "question": "What does Serializable isolation require from the application?",
+    "answer": "Handle possible transaction aborts and retry the whole transaction when appropriate. Include the reads and decisions in the retry. Keep remote side effects safe from repetition."
+  },
+  {
+    "number": 140,
+    "question": "How do a deadlock and a long lock wait differ?",
+    "answer": "A deadlock contains a cycle of transactions waiting on each other. A long wait can happen without a cycle. Use a consistent lock order and keep transactions short."
+  },
+  {
+    "number": 141,
+    "question": "Why can a replica return old data after a successful write?",
+    "answer": "Replication can lag behind the writer. Read critical confirmation from an appropriate authoritative source or use a deliberate read-your-writes design."
+  },
+  {
+    "number": 142,
+    "question": "How do partitioning and sharding differ?",
+    "answer": "Partitioning divides a dataset into pieces, often inside one database. Sharding distributes data ownership across database nodes. Sharding adds routing, coordination, and recovery work."
+  },
+  {
+    "number": 143,
+    "question": "What does CAP mean during a network partition?",
+    "answer": "Under the theorem's model, a system cannot guarantee both a single linearizable view and an available response to every request at nonfailed nodes. Explain the chosen behavior for the operation."
+  },
+  {
+    "number": 144,
+    "question": "How do a queue and publish subscribe differ?",
+    "answer": "Queue workers share tasks. Publish/subscribe gives independent subscribers their own event delivery path. SNS with separate SQS queues is one AWS example of fanout."
+  },
+  {
+    "number": 145,
+    "question": "How do at most once and at least once delivery differ?",
+    "answer": "At most once avoids redelivery under its contract but can lose work. At least once can repeat delivery while seeking success. Consumers must handle duplicates safely."
+  },
+  {
+    "number": 146,
+    "question": "Does exactly once messaging guarantee one external payment charge?",
+    "answer": "Only if the stated guarantee includes that payment effect. Ordinary broker guarantees do not automatically include a remote provider. Use provider-supported idempotency and recovery."
+  },
+  {
+    "number": 147,
+    "question": "What does an idempotency key do?",
+    "answer": "It identifies one logical operation across retries. Store its state and result, enforce uniqueness, and reject a different payload using the same key."
+  },
+  {
+    "number": 148,
+    "question": "What problem does the transactional Outbox solve?",
+    "answer": "It stores the business change and event intent in one database transaction. A worker publishes later. Publication can repeat, so consumers still need duplicate handling."
+  },
+  {
+    "number": 149,
+    "question": "How does a transactional Inbox differ from an Outbox?",
+    "answer": "Outbox protects sending intent. Inbox records a unique event receipt with the receiving service's local database effect. It prevents repeated delivery from repeating that protected local effect."
+  },
+  {
+    "number": 150,
+    "question": "What is a Saga?",
+    "answer": "It coordinates a business operation through local commits and later compensating actions when needed. A refund or stock release is a new action, not the erasure of an earlier commit."
+  },
+  {
+    "number": 151,
+    "question": "How should event ordering be handled?",
+    "answer": "Define the required scope, such as one order. Use suitable routing and version or transition checks. A late event must not blindly replace newer state."
+  },
+  {
+    "number": 152,
+    "question": "Why does a payment timeout mean uncertainty?",
+    "answer": "The provider may have completed the charge before the response was lost. Reuse the same logical operation key and reconcile status instead of creating a fresh charge blindly."
+  },
+  {
+    "number": 153,
+    "question": "When is retry appropriate?",
+    "answer": "Retry a temporary failure when the operation is safe to repeat or protected by idempotency. Bound attempts and total time. Repeated invalid input or denied access usually needs a different response."
+  },
+  {
+    "number": 154,
+    "question": "Why add jitter to exponential backoff?",
+    "answer": "Backoff increases the delay between retries. Jitter randomizes it so many clients do not retry at the same instant and create another spike."
+  },
+  {
+    "number": 155,
+    "question": "What are the three circuit breaker states?",
+    "answer": "Closed allows calls and observes results. Open rejects calls quickly for a period. Half-open allows limited trial calls to check recovery."
+  },
+  {
+    "number": 156,
+    "question": "How do a circuit breaker and a rate limiter differ?",
+    "answer": "A breaker reacts to dependency health. A rate limiter controls allowed traffic over time. A concurrency limit controls how much work can stay in progress at once."
+  },
+  {
+    "number": 157,
+    "question": "What does a rate limit burst allow?",
+    "answer": "A brief rate above the steady allowance, within a defined limit. For example, a full token bucket can allow an initial burst before its refill rate limits later traffic."
+  },
+  {
+    "number": 158,
+    "question": "What is load shedding?",
+    "answer": "Reject part of excess work to preserve useful service. For example, pause expensive optional reports while keeping checkout available. Bound queues instead of allowing unlimited waiting."
+  },
+  {
+    "number": 159,
+    "question": "What should be atomic when creating an order?",
+    "answer": "Put the order, related local stock reservation, and required Outbox intent in one database transaction when they share that database. Treat remote payment as a separate recoverable step."
+  },
+  {
+    "number": 160,
+    "question": "Why separate order payment and reservation states?",
+    "answer": "They can change independently. An order can await payment, a payment can be uncertain, and a refund can remain pending after cancellation."
+  },
+  {
+    "number": 161,
+    "question": "How do you prevent two customers buying the last unit?",
+    "answer": "Make the stock check and decrement one conditional database update, or use a suitable lock or version check. Require an affected row and commit related changes together."
+  },
+  {
+    "number": 162,
+    "question": "How should a payment webhook be processed?",
+    "answer": "Verify authenticity, deduplicate the event, check the tenant, amount, currency, and payment identity, then apply a legal conditional transition. A browser redirect is not enough payment evidence."
+  },
+  {
+    "number": 163,
+    "question": "How do you prevent an expiry job releasing stock twice?",
+    "answer": "Change the reservation from active to released conditionally, and return its stock in the same local transaction. A repeat run must see that release already happened."
+  },
+  {
+    "number": 164,
+    "question": "What if payment succeeds after the reservation expires?",
+    "answer": "Follow an explicit policy: try a new reservation, refund, or send to review. Coordinate the state change with expiry. Do not promise both immediate release and guaranteed late fulfillment."
+  },
+  {
+    "number": 165,
+    "question": "How do an image a container and a Pod differ?",
+    "answer": "An image packages the application. A container runs it. A Pod is Kubernetes' smallest deployable unit and holds one or more closely cooperating containers."
+  },
+  {
+    "number": 166,
+    "question": "What are a cluster a node and the control plane?",
+    "answer": "A cluster is the managed group. Nodes run workloads. The control plane manages desired state and placement. In EKS, AWS operates the managed control plane."
+  },
+  {
+    "number": 167,
+    "question": "When do you choose Deployment StatefulSet or DaemonSet?",
+    "answer": "Deployment runs app copies. StatefulSet provides stable Pod identities and storage links. DaemonSet runs one Pod on each eligible node, such as a log agent."
+  },
+  {
+    "number": 168,
+    "question": "How do Job and CronJob differ?",
+    "answer": "Job runs work to completion. CronJob creates Jobs on a schedule. Runs can repeat, so repeated execution must be safe."
+  },
+  {
+    "number": 169,
+    "question": "How do Service Ingress and API Gateway differ?",
+    "answer": "Service gives stable access to backends. Ingress defines HTTP routing through a controller. An API gateway can add API policies such as authentication and rate limits, depending on the product."
+  },
+  {
+    "number": 170,
+    "question": "How do readiness liveness and startup probes differ?",
+    "answer": "Readiness controls normal traffic eligibility. Liveness checks whether restarting is an appropriate recovery. Startup gives a slow-starting process time before the other probes judge it."
+  },
+  {
+    "number": 171,
+    "question": "How do resource requests and limits differ?",
+    "answer": "Requests help scheduling and resource allocation. Limits restrict usage. CPU limits can throttle work; memory limits can lead to OOMKilled when memory is exhausted."
+  },
+  {
+    "number": 172,
+    "question": "Why can Java be OOMKilled before a Java OutOfMemoryError?",
+    "answer": "The container includes more than the Java heap. Thread stacks, buffers, and other JVM memory can reach the container's memory boundary first."
+  },
+  {
+    "number": 173,
+    "question": "How do HPA and node autoscaling differ?",
+    "answer": "HPA changes the number of Pods. A node autoscaler adds suitable node capacity when Pods need it. More Pods do not automatically add database capacity."
+  },
+  {
+    "number": 174,
+    "question": "How do self healing and autoscaling differ?",
+    "answer": "Self-healing restores healthy desired operation after failure. Autoscaling changes capacity for demand. Neither fixes every application bug or database bottleneck."
+  },
+  {
+    "number": 175,
+    "question": "How do logs metrics and traces differ?",
+    "answer": "Logs describe individual events. Metrics show patterns and counts. Traces show where one request spent time. Use them together to connect a user problem to its cause."
+  },
+  {
+    "number": 176,
+    "question": "How do SLI SLO and SLA differ?",
+    "answer": "SLI is what you measure. SLO is the target for that measure. SLA is the agreement with the customer, including its terms and any consequences for missing them."
+  },
+  {
+    "number": 177,
+    "question": "Why look at p95 or p99 instead of only the average?",
+    "answer": "An average can hide slow requests. Percentiles show the slower part of the distribution. Compare the same route, outcome, and time window; do not average replica p99 values."
+  },
+  {
+    "number": 178,
+    "question": "How do you change a database schema safely during a rollout?",
+    "answer": "Add compatible fields, deploy code that supports the transition, backfill and verify existing data, then remove the old shape later. This is expand, migrate, contract."
+  },
+  {
+    "number": 179,
+    "question": "How do RTO and RPO differ?",
+    "answer": "RTO is the target time to restore service. RPO is the acceptable data-loss window measured in time. Test recovery against both targets."
+  },
+  {
+    "number": 180,
+    "question": "Does a replica replace a backup?",
+    "answer": "No. A replica can copy accidental deletion or bad data. Backups and retained logs can support recovery to an earlier point. Rehearse the restore and application checks."
+  },
+  {
+    "number": 181,
+    "question": "How do a Region and an Availability Zone differ?",
+    "answer": "A Region is a geographic deployment area. It contains separate Availability Zones. Using several zones can reduce the effect of losing one zone."
+  },
+  {
+    "number": 182,
+    "question": "What makes a subnet public or private?",
+    "answer": "In a conventional IPv4 design, a public subnet has a direct route to an Internet Gateway. A private subnet does not. A route alone does not give every resource public access."
+  },
+  {
+    "number": 183,
+    "question": "What does a NAT Gateway do?",
+    "answer": "It lets appropriately routed private IPv4 resources start outbound internet connections. It is not the customer-facing entry point for your API. A load balancer or gateway serves that role."
+  },
+  {
+    "number": 184,
+    "question": "How do security groups and network ACLs differ?",
+    "answer": "Security groups use stateful allow rules for associated resources. Network ACLs use ordered allow and deny rules at the subnet boundary and are stateless."
+  },
+  {
+    "number": 185,
+    "question": "How do ALB and API Gateway differ?",
+    "answer": "ALB routes application traffic to targets. API Gateway provides API entry and management features that depend on API type. Use the features your design needs; both can be used together."
+  },
+  {
+    "number": 186,
+    "question": "How do managed container options compare across AWS and GCP?",
+    "answer": "EKS and GKE provide managed Kubernetes. ECS orchestrates containers and can use Fargate compute. Cloud Run services provide managed container execution and request routing. Compare workload needs, operational control, and scaling behavior rather than assuming exact equivalents."
+  },
+  {
+    "number": 187,
+    "question": "How do S3 EBS and EFS differ?",
+    "answer": "S3 stores objects. EBS provides block volumes for supported EC2 workloads. EFS provides shared file storage. Choose from the application's access and sharing needs."
+  },
+  {
+    "number": 188,
+    "question": "How do RDS Multi AZ and read replicas differ?",
+    "answer": "A conventional Multi-AZ DB instance uses a standby for failover. Read replicas support read scaling and can lag. RDS Multi-AZ DB clusters have different readable-standby behavior, so name the deployment type."
+  },
+  {
+    "number": 189,
+    "question": "Why use an IAM role instead of a stored AWS access key?",
+    "answer": "A role can provide temporary credentials to a workload. Give it only the actions and resources it needs. Network access and application authorization remain separate checks."
+  },
+  {
+    "number": 190,
+    "question": "How do SNS SQS and GCP Pub Sub compare?",
+    "answer": "SQS queues work. SNS can fan events out to independent SQS queues or other endpoints. GCP Pub/Sub uses topics and subscriptions; separate subscriptions provide independent delivery paths. Cloud Tasks targets explicit task delivery. These services differ in control and delivery behavior."
+  },
+  {
+    "number": 191,
+    "question": "What is RAG?",
+    "answer": "Retrieval-augmented generation retrieves relevant source material and gives it to the model as context. It helps answers use external information without retraining the model for each update."
+  },
+  {
+    "number": 192,
+    "question": "When should you use a live API instead of document retrieval?",
+    "answer": "Use a trusted live API for current structured facts such as payment status or stock. A document index may be stale even if retrieval works correctly."
+  },
+  {
+    "number": 193,
+    "question": "Does RAG guarantee a correct answer?",
+    "answer": "No. The source must be current, retrieval must find the right evidence, and the answer must use it correctly. Return a useful limitation when evidence is missing."
+  },
+  {
+    "number": 194,
+    "question": "Where should tenant authorization happen in a RAG flow?",
+    "answer": "Before content reaches the model, logs, or user. Use trusted tenant and permission filters during retrieval. Filtering only the final answer is too late."
+  },
+  {
+    "number": 195,
+    "question": "How do MCP and skills differ in an agentic coding workflow?",
+    "answer": "MCP connects the agent to tools or data. A skill describes a reusable procedure for a task. Neither replaces access controls, and MCP is optional when built-in tools or CLIs already provide the needed capability."
+  },
+  {
+    "number": 196,
+    "question": "What evidence should you ask for before accepting an AI coding change?",
+    "answer": "Review the diff and require appropriate executable checks. Ask for commands, results, mocked dependencies, skipped checks, and limitations. A browser demonstration or passing generated test alone does not prove the full business behavior."
+  },
+  {
+    "number": 197,
+    "question": "What belongs in a technical design document?",
+    "answer": "Cover the problem, constraints, proposal, data and API changes, failures, security, capacity, rollout, validation, and owners. Match the length to the decision."
+  },
+  {
+    "number": 198,
+    "question": "How does an ADR differ from a design document?",
+    "answer": "An ADR records one decision, its reasons, and consequences. A design document explains the wider change. Link them when useful."
+  },
+  {
+    "number": 199,
+    "question": "What makes a postmortem useful?",
+    "answer": "Connect impact, timeline, evidence, causes, and owned actions. Explain why the system allowed the failure and how you will verify the fix."
+  },
+  {
+    "number": 200,
+    "question": "How should an engineering leader explain an architecture decision?",
+    "answer": "Explain the business need and constraints, compare options, describe the chosen tradeoff, and name the owner. State what evidence would make you reconsider."
+  }
+]
