@@ -155,7 +155,7 @@
       "Use the problem statements and examples in this chapter. Write your own solution, explain why it works, and check its behavior. No solutions are provided here."
     ]
   ],
-  "SOLID and design patterns": [
+  "SOLID design patterns and DDD": [
     [
       "SOLID",
       "SRP groups code that changes for the same reason. OCP supports a known variation through extension. LSP preserves the contract. ISP narrows client interfaces. DIP makes policy depend on abstractions."
@@ -173,12 +173,12 @@
       "Adapter translates an interface. Decorator adds behavior around the same contract. Proxy controls access or invocation. Facade simplifies access to a subsystem. Similar structure can serve different intent."
     ],
     [
-      "Behavior patterns",
-      "Strategy selects a policy. State changes behavior with state transitions. Observer notifies listeners. Template Method fixes a workflow while subclasses fill steps. In-memory notification does not guarantee durable delivery."
+      "DDD language and boundaries",
+      "Model business rules with experts. Ubiquitous Language is shared within a Bounded Context. A subdomain is a business area; a context is a model boundary. DDD does not require microservices."
     ],
     [
-      "Other names and judgment",
-      "Bridge separates independently varying abstractions and implementations. Composite treats leaves and groups alike. Flyweight shares reusable state. Explain the actual problem, variation, cost, and contract before naming a pattern."
+      "DDD model and workflow",
+      "Entities have identity; Value Objects have value equality. An Aggregate Root controls changes and invariants. Repositories load and save aggregates. Application Services coordinate; Domain Services hold suitable business operations. Domain Events describe past facts; an Anti-Corruption Layer translates external models."
     ]
   ],
   "Spring Boot and dependency injection": [
@@ -673,6 +673,32 @@
     [
       "Operations and tradeoffs",
       "CloudWatch compares with Monitoring and Logging; CloudTrail with Audit Logs. Choose regions, managed-service fit, recovery, team ownership, and total cost. Include egress and engineering effort; multi-cloud adds operational work."
+    ]
+  ],
+  "Git CI CD and GitHub Actions": [
+    [
+      "Git state and history",
+      "Working tree is edited files; staging selects changes; commits record history. HEAD identifies the checkout. Fetch downloads; pull also integrates. Merge combines histories; rebase reapplies commits with new IDs."
+    ],
+    [
+      "Team workflow",
+      "Keep branches short where suitable. Review PRs and require checks. Squash combines a PR into one commit. Prefer revert for shared history. Coordinate rebases; hard reset can discard work. Tags identify commits, not complete deployment state."
+    ],
+    [
+      "CI and release",
+      "CI integrates and checks frequently. Delivery keeps changes releasable; deployment automatically promotes passing changes. Build once, identify the artifact, test it, and promote the same artifact. Observe business outcomes after release."
+    ],
+    [
+      "Actions and data",
+      "Events trigger workflows. Jobs run on runners; steps normally run sequentially. needs declares dependencies; matrices run variations. Fresh hosted jobs need explicit file transfer. Cache saves build time; artifacts preserve outputs and reports."
+    ],
+    [
+      "Safety and recovery",
+      "Use least privilege, environment gates, OIDC with restricted cloud trust, and reviewed action SHAs. Keep untrusted PR code away from privileged credentials. Coordinate deployments, preserve schema compatibility, and prepare rollback or roll-forward."
+    ],
+    [
+      "Quality and AI",
+      "Choose checks from the actual failure risks. A green pipeline does not prove production behavior. Own flaky tests and measure slow stages. Review AI-generated workflow permissions, versions, dependencies, and recovery paths."
     ]
   ],
   "AI system design": [

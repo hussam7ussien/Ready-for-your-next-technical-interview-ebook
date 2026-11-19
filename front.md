@@ -8,6 +8,8 @@ Hussam Elnaqeb
 
 First Edition November 2026
 
+Updated version with a foreword by Tamer Mohamed and a Git and CI CD chapter
+
 ## About this guide
 
 This ebook started as notes I took while preparing for technical interviews. I organized them into one practical reference for revision, then decided to share it with others preparing for interviews or conducting them. I hope it helps you review the key ideas, explain them clearly, and feel more prepared.
@@ -32,6 +34,6 @@ Capacity numbers, SQL plan timings, and worked design and incident examples are 
 
 Source files and examples
 
-https://github.com/hussam7ussien/Advanced-Technical-Interview-eBook
+https://github.com/hussam7ussien/Ready-for-your-next-technical-interview-ebook
 
 Copyright 2026 Hussam Elnaqeb

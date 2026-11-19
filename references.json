@@ -653,5 +653,50 @@
     "S186",
     "Playwright browser isolation",
     "https://playwright.dev/docs/browser-contexts"
+  ],
+  [
+    "S187",
+    "Eric Evans Domain Driven Design Reference",
+    "https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf"
+  ],
+  [
+    "S188",
+    "Git pull documentation",
+    "https://git-scm.com/docs/git-pull"
+  ],
+  [
+    "S189",
+    "Git reset and revert",
+    "https://git-scm.com/docs/git-revert"
+  ],
+  [
+    "S190",
+    "AWS Continuous Delivery",
+    "https://aws.amazon.com/devops/continuous-delivery/"
+  ],
+  [
+    "S191",
+    "GitHub Actions concepts",
+    "https://docs.github.com/en/actions/get-started/understand-github-actions"
+  ],
+  [
+    "S192",
+    "GitHub workflow artifacts",
+    "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts"
+  ],
+  [
+    "S193",
+    "GitHub Actions secure use",
+    "https://docs.github.com/en/actions/reference/security/secure-use"
+  ],
+  [
+    "S194",
+    "GitHub deployment concurrency",
+    "https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments"
+  ],
+  [
+    "S195",
+    "GitHub Java setup action",
+    "https://github.com/actions/setup-java"
   ]
 ]

@@ -909,9 +909,73 @@ Given n steps, count the distinct ways to reach the top if each move climbs one 
 
 **Q32 Which cases would you test before finishing?**
 
-# SOLID and design patterns
+# SOLID design patterns and DDD
 
 **SOLID** helps you decide where code belongs and how parts should depend on each other. **Design patterns** describe useful ways to solve recurring design problems. Start with a real change or problem, then choose a design that makes the code easier to change and test.
+
+## Domain Driven Design
+
+**Domain-Driven Design (DDD)** means designing software around **business concepts and rules**, using a shared language between developers and business experts. The model describes business behavior, rather than simply copying database tables.
+
+DDD helps most when the rules are complex or different teams use different meanings for the same term. A simple CRUD feature may need only a simple model.
+
+## Business language and boundaries
+
+| Concept | Simple meaning | Example |
+| --- | --- | --- |
+| Domain and Subdomain | The business area and its smaller parts | Restaurant operations includes ordering, payments, and delivery |
+| Ubiquitous Language | Terms used consistently in discussion and code within a context | Everyone agrees what a confirmed order means |
+| Bounded Context | A boundary where one model and vocabulary apply | Ordering and Billing use separate models |
+
+**A bounded context is not automatically a microservice.** A modular monolith can contain several contexts. A business subdomain describes part of the problem; a bounded context describes the boundary of a model used to solve it.
+
+## Building the domain model
+
+| Concept | Simple meaning | Example |
+| --- | --- | --- |
+| Entity | An object tracked by identity | Order 123 remains the same order after its status changes |
+| Value Object | An object defined by its values, usually immutable | Money contains amount and currency |
+| Aggregate | Related objects kept consistent as one unit | An Order and its OrderItems |
+| Aggregate Root | The entity controlling changes to that unit | Add items through Order.addItem() |
+| Invariant | A business rule that must stay true | An item's quantity must be positive |
+
+Two Money values with the same amount and currency represent the same value. Two orders with the same total can still be different entities because they have different identities.
+
+An **aggregate** is the whole consistency boundary. Its **root** is the entry point for changes. It is not a SQL aggregation or a service that collects responses from several APIs.
+
+## Services events and integration
+
+| Concept | Simple meaning | Example |
+| --- | --- | --- |
+| Repository | Loads and saves aggregates while hiding storage details | OrderRepository |
+| Domain Service | A business operation that does not naturally belong to one entity or value object | Shipping price calculation across domain policies |
+| Application Service | Coordinates a use case | Load order, call confirm(), then save |
+| Domain Event | A meaningful business fact that already happened | OrderPaid |
+| Anti-Corruption Layer | Translates an external model into your own | Map provider payment statuses to domain statuses |
+
+A class annotated with **@Service** is not automatically a domain service. Its responsibility decides its role. Application services coordinate work; business rules belong in the domain model or an appropriate domain service.
+
+## A small order example
+
+An application service loads an Order through its repository. It calls **order.addItem(productId, quantity, price)**. The Order rejects a quantity of zero or less and prevents changes after confirmation. Callers cannot edit its items through an exposed mutable list.
+
+When the application calls **order.confirm()**, the Order checks that it has at least one item and makes the allowed state transition. The application service saves the change within a transaction. The root protects the rules in memory; suitable database constraints, locking, or version checks protect against competing requests.
+
+![Order aggregate boundary](figures/ddd_aggregate.png)
+
+The Order root controls item changes inside the aggregate
+
+## Interview points to remember
+
+**Choose the boundary from the rules.** Related database rows do not automatically belong in one aggregate. Keep the unit small enough to load and update without unnecessary contention.
+
+**An aggregate is not a distributed transaction.** Updating an Order does not atomically update a separate Payment service. Use the consistency and recovery patterns discussed later in this guide.
+
+**A domain event is not automatically a durable message.** OrderPaid describes a business fact. An Outbox can help publish that fact reliably after the related database change.
+
+**AI usage hint:** Ask AI to suggest entities, value objects, and possible invariants from a requirement. Check the names and rules with a business expert before accepting the proposed boundaries.
+
+Further reading [S187]
 
 ## SOLID in practical terms
 
@@ -3071,6 +3135,138 @@ A role can provide temporary credentials to a workload. Give it only the actions
 SQS queues work. SNS can fan events out to independent SQS queues or other endpoints. GCP Pub/Sub uses topics and subscriptions; separate subscriptions provide independent delivery paths. Cloud Tasks targets explicit task delivery. These services differ in control and delivery behavior.
 
 Further reading [S89] [S91] [S94] [S95] [S98] [S102] [S106]
+
+# Git CI CD and GitHub Actions
+
+Be able to explain **how a code change moves from a commit to a safe production release**, including how failures are handled. Knowing a YAML syntax is only one part of that story.
+
+## Git essentials
+
+| Topic | What to explain |
+| --- | --- |
+| Working tree staging area commit | Files you edit; changes selected for the next commit; a saved snapshot in history |
+| Branch and HEAD | A branch points to a commit; HEAD identifies your current checkout, usually through a branch |
+| Fetch and pull | Fetch downloads remote objects and updates remote-tracking references; pull also integrates into the current branch |
+| Merge and rebase | Merge combines histories; rebase reapplies commits and changes their IDs. Coordinate before rewriting shared history |
+| Reset and revert | Reset moves a branch and may change the index or working tree, depending on its mode. Revert creates a new undo commit |
+| Cherry-pick | Apply the change from a selected commit to another branch |
+| Stash and reflog | Stash temporarily stores unfinished changes; reflog helps find earlier local reference positions |
+| Conflicts | Resolve the files, stage the result, then continue; or abort the merge or rebase |
+
+**Prefer revert for shared history.** A hard reset can discard local work. A reflog is local recovery evidence with limited retention, not a remote backup.
+
+A common workflow uses short-lived **feature branches**, a **pull request**, required checks, review, and a merge. A **squash merge** combines the PR changes into one commit. A **release tag** identifies a release commit; deployment should also record the exact artifact digest or version.
+
+**Trunk-based development** keeps integration frequent and branches short. **GitFlow** adds long-lived development and release branches; that can support separate release lines but increases merging and coordination. Choose from release needs, rather than treating one model as always correct.
+
+## CI delivery and deployment
+
+| Term | Meaning |
+| --- | --- |
+| Continuous Integration | Integrate frequently and automatically build and test changes |
+| Continuous Delivery | Keep changes ready for production; production deployment may require approval |
+| Continuous Deployment | Automatically deploy changes that pass the required checks |
+
+The key difference between delivery and deployment is the **production release decision**. A successful build does not mean that deployment happened or that the business flow works.
+
+## A practical release pipeline
+
+- **Pull request:** run formatting, static analysis, unit tests, and relevant integration tests. Require review and suitable checks before merge.
+- **Merge:** build a versioned JAR or container image, run security scans, and store the artifact with its source revision.
+- **Staging:** deploy that artifact and run suitable integration, E2E, and smoke checks.
+- **Production:** promote the **same tested artifact**, through approval or automatic gates. Prefer an immutable image digest over a mutable latest tag.
+- **After deployment:** watch errors, latency, and business outcomes. Stop a rollout or recover when the release fails.
+
+![Release pipeline with recovery](figures/cicd_pipeline.png)
+
+Passing checks is followed by production verification and a recovery decision
+
+Separate **deployment** from **exposure** where useful. A feature flag can hide a new behavior after code is deployed. It needs an owner, a safe default, and a removal plan.
+
+## GitHub Actions building blocks
+
+| Concept | Purpose |
+| --- | --- |
+| Workflow | Automation defined in .github/workflows/*.yml |
+| Event | A trigger such as pull_request, push, or workflow_dispatch |
+| Job | A group of steps executed on a runner |
+| Step | A command through run, or an action through uses |
+| Runner | The GitHub-hosted or self-hosted machine executing the job |
+| needs | Job dependencies; independent jobs can run in parallel |
+| Matrix | Runs variations such as Java versions or operating systems |
+| Reusable workflow | Shares a complete workflow across callers |
+
+Steps in a job normally run sequentially. Standard GitHub-hosted jobs use fresh environments, so a file created in one job is not automatically available in another. Use an explicit artifact transfer or a suitable external registry. Do not assume a self-hosted runner has the same clean environment.
+
+**Cache** speeds up builds, such as reusing downloaded Maven dependencies. **Artifacts** preserve outputs and reports or transfer files between jobs. A dependency cache is not the release artifact you promote.
+
+## A small Java CI example
+
+```yaml
+#.github/workflows/ci.yml
+name: Java CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build and verify
+        run: ./mvnw --batch-mode verify
+```
+
+This illustrative workflow assumes a committed, executable **Maven Wrapper** and a Maven project. Integration tests must be configured in the build, for example through Failsafe. The snippet runs CI; it does not deploy an application. The ebook repository itself is not that Maven application.
+
+Major action tags make the example readable; production workflows should pin reviewed actions to **full commit SHAs** and maintain updates. Check action and runner compatibility before copying it.
+
+## Safe deployment and recovery
+
+| Scenario | Decision to explain |
+| --- | --- |
+| Bad commit on main | Revert through the normal review process; avoid rewriting shared history |
+| Overlapping deployments | Coordinate writers with a shared environment-specific concurrency group |
+| Release increases errors | Stop exposure and roll back to a known artifact, or roll forward if compatibility requires it |
+| Database schema changes | Use backward-compatible expand, migrate, contract steps |
+| Gradual exposure | Choose a rolling rollout, blue-green switch, canary traffic, or a feature flag |
+| Slow or flaky pipeline | Measure the bottleneck, parallelize independent checks, cache dependencies, and assign flaky-test ownership |
+
+**Rolling** replaces instances gradually. **Blue-green** switches traffic between two environments. **Canary** exposes a small portion of traffic before expanding. All need health and business checks; a process starting is not enough.
+
+A deployment job can use an environment such as production and a concurrency group such as **deploy-production**. Use the same group for workflows targeting that environment. With **cancel-in-progress: false**, do not cancel an active deployment midway; concurrency alone is not a complete FIFO release queue or a protection against out-of-band deployment tools. Validate release ordering too.
+
+## Credentials and trust
+
+Use **required PR checks**, protected deployment environments, suitable approvals, and least-privilege job permissions. Approval availability depends on the repository and plan configuration.
+
+Use **OIDC** for short-lived cloud credentials when supported. Grant id-token: write only to the job that needs it, and restrict the cloud trust policy to the expected repository, environment or ref, and audience. OIDC authentication still needs authorization on the cloud side.
+
+Keep untrusted PR code away from privileged credentials. In particular, **pull_request_target** runs in the base repository context: do not check out and execute untrusted PR code there with secrets or write privileges. Review self-hosted runner access and isolation too.
+
+**AI usage hint:** Ask AI to review workflow dependencies, permissions, and failure paths. Verify action versions and generated YAML yourself. Do not give an agent production credentials just to draft a pipeline.
+
+## Interview discussion
+
+**What should move from staging to production?** The same identified artifact that passed the required checks, with configuration supplied for the target environment.
+
+**Can code rollback undo every database migration?** No. Keep schemas compatible during rollout and choose rollback or roll-forward from the actual data and application state.
+
+**Why can a pipeline be green but a release be broken?** Checks may miss a real dependency, environment setting, migration, or business path. Observe the deployed behavior and keep a recovery plan.
+
+Further reading [S188] [S189] [S190] [S191] [S192] [S193] [S194] [S195]
 
 # AI system design
 

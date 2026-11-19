@@ -2,8 +2,11 @@ READY FOR YOUR NEXT TECHNICAL INTERVIEW
 From Java and Spring Boot to Cloud, System Design, and AI-Assisted Development
 Hussam Elnaqeb — First Edition November 2026
 
-29 chapters, 200 interview questions, 20 coding practice problems without solutions,
-29 one-page chapter cheat sheets, and editable diagrams.
+Foreword by Tamer Mohamed
+Updated with Domain-Driven Design and Git CI CD and GitHub Actions
+
+30 chapters, 200 interview questions, 20 coding practice problems without solutions,
+30 one-page chapter cheat sheets, and editable diagrams.
 Most interview questions have short model answers. Coding discussion questions
 and challenge problems deliberately have no answers.
 
@@ -22,4 +25,4 @@ not executed against a deployed app. Adapt fixtures, routes, selectors, and base
 examples/mcp.example.json is illustrative; pin a tested server version for team use.
 examples/SKILL.example.md is an example workflow, not an authorization grant.
 
-Repository: https://github.com/hussam7ussien/Advanced-Technical-Interview-eBook
+Repository: https://github.com/hussam7ussien/Ready-for-your-next-technical-interview-ebook

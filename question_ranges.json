@@ -1,117 +1,117 @@
 {
-  "1": [
+  "Using this guide": [
     1,
     2
   ],
-  "2": [
+  "Java essentials": [
     3,
     7
   ],
-  "3": [
+  "Collections": [
     8,
     16
   ],
-  "4": [
+  "Streams": [
     17,
     23
   ],
-  "5": [
+  "Searching and sorting": [
     24,
     29
   ],
-  "6": [
+  "Coding challenges": [
     30,
     32
   ],
-  "7": [
+  "SOLID design patterns and DDD": [
     33,
     47
   ],
-  "8": [
+  "Spring Boot and dependency injection": [
     48,
     57
   ],
-  "9": [
+  "HTTP APIs and validation": [
     58,
     64
   ],
-  "10": [
+  "JPA and database access": [
     65,
     70
   ],
-  "11": [
+  "Transactions and rollback": [
     71,
     81
   ],
-  "12": [
+  "Concurrency": [
     82,
     89
   ],
-  "13": [
+  "Caching": [
     90,
     95
   ],
-  "14": [
+  "Security and identity": [
     96,
     101
   ],
-  "15": [
+  "Async work and application events": [
     102,
     107
   ],
-  "16": [
+  "Testing": [
     108,
     114
   ],
-  "17": [
+  "PostgreSQL and SQL plans": [
     115,
     125
   ],
-  "18": [
+  "System requirements and capacity": [
     126,
     132
   ],
-  "19": [
+  "Data modeling": [
     133,
     135
   ],
-  "20": [
+  "Transactions and distributed data": [
     136,
     143
   ],
-  "21": [
+  "Messaging and consistency": [
     144,
     151
   ],
-  "22": [
+  "Resilience and traffic spikes": [
     152,
     158
   ],
-  "23": [
+  "Orders payments inventory and notifications": [
     159,
     164
   ],
-  "24": [
+  "Docker and Kubernetes": [
     165,
     174
   ],
-  "25": [
+  "Deployment observability and recovery": [
     175,
     180
   ],
-  "26": [
+  "AWS and GCP": [
     181,
     190
   ],
-  "27": [
+  "AI system design": [
     191,
     194
   ],
-  "28": [
+  "Agentic AI for coding": [
     195,
     196
   ],
-  "29": [
+  "Design documents postmortems and leadership": [
     197,
     200
   ]
