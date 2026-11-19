@@ -10,6 +10,8 @@ A practical preparation guide for **candidates and interviewers**, written in si
 
 <img src="./cover.png" alt="Ready for Your Next Technical Interview book cover by Hussam Elnaqeb" width="340">
 
+**Foreword by Tamer Mohamed, Senior Staff Engineer @ MaxAB.**
+
 ## Why I wrote this guide
 
 This ebook started as notes I took while preparing for technical interviews. I wanted one place to review the topics, understand how they connect, and practise explaining them clearly.
@@ -18,7 +20,7 @@ I organized those notes into this guide and decided to share it with others. My 
 
 ## What you will find
 
-- **29 chapters** covering Java, Spring Boot, PostgreSQL, system design, cloud, and engineering practice.
+- **30 chapters** covering Java, Spring Boot, PostgreSQL, system design, cloud, and engineering practice.
 - **200 interview questions**, with short model answers for most questions.
 - **20 common coding challenges** with problem statements and examples. The ebook's coding challenge chapter has **no solutions or algorithm hints**, so you can practise independently.
 - A **one-page cheat sheet after every chapter**.
@@ -41,6 +43,7 @@ I organized those notes into this guide and decided to share it with others. My 
 | **Testing and PostgreSQL** | Unit and integration testing, execution plans, indexes, and query performance |
 | **System design** | Requirements, capacity, data modeling, locking, replication, consistency, messaging, and resilience |
 | **Practical workflows** | Orders, payments, inventory, notifications, idempotency, Saga, Outbox, and Inbox |
+| **Git and CI/CD** | Git history and team workflows, GitHub Actions, artifact promotion, deployment gates, OIDC, and recovery |
 | **Cloud and operations** | Docker, Kubernetes, AWS, GCP, observability, deployment, migrations, and recovery |
 | **AI and engineering practice** | RAG, agentic coding, Playwright, MCP, skills, design documents, postmortems, and leadership |
 
@@ -95,7 +98,7 @@ He has managed teams of up to **21 engineers**, worked on products across four A
 
 ## Feedback and corrections
 
-Found an unclear explanation, a technical mistake, or a broken example? [Open an issue](https://github.com/hussam7ussien/Ready-for-your-next-technical-interview-e-book/issues) and include the chapter or question number, the problem, and a suggested correction when possible.
+Found an unclear explanation, a technical mistake, or a broken example? [Open an issue](https://github.com/hussam7ussien/Ready-for-your-next-technical-interview-ebook/issues) and include the chapter or question number, the problem, and a suggested correction when possible.
 
 If this guide helps you, consider giving the repository a **star** and sharing it with someone preparing for an interview.
 
